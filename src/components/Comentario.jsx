@@ -1,12 +1,14 @@
 import React from "react";
 import './Comentario.css'
 
-export default function Comentario() {
+export default function Comentario(props) {
     
     return (
         <div className="comentario">
-            <div>João:</div>
-            <div>Ola tudo bem?</div>
+            <h2>{props.nome}:</h2>
+            <p>{props.email}</p>
+            <p>{props.children}</p>
+            <p>{props.data.toString()}</p>
         </div>
     )
 }
