@@ -3,6 +3,7 @@ import React from 'react'
 import './Usuario.css'
 
 function Usuario(props) {
+  console.log(props.usuario)
   return (
     <div className="Usuario">
       <ul>
