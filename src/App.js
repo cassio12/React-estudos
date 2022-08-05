@@ -4,7 +4,7 @@ import { BrowserRouter as Router, NavLink, Routes, Route } from 'react-router-do
 
 import Usuarios from './components/Usuarios/Usuarios'
 import AdicionarUsuario from './components/AdicionarUsuario/AdicionarUsuario';
-
+import DetalhesUsuario from './components/DetalhesUsuario/DetalhesUsuario'
 import Home from './components/Home/Home';
 
 function App() {
@@ -15,13 +15,13 @@ function App() {
           <nav>
             <ul>
               <li>
-                <NavLink to='/'>Inicío</NavLink>
+                <NavLink to='/'>Home</NavLink>
               </li>
               <li>
-                <NavLink to='/usuarios'>Usuários Cadastrados</NavLink>
+                <NavLink to='/usuarios'>Registered Users</NavLink>
               </li>
               <li>
-                <NavLink to='/adicionar'>Adicionar Usuários</NavLink>
+                <NavLink to='/adicionar'>Add Users</NavLink>
               </li>
             </ul>
           </nav>
@@ -29,6 +29,7 @@ function App() {
         <main>
          <Routes>
           <Route path="/" element={<Home/>}/>
+          <Route path="/usuarios/:id" element={<DetalhesUsuario/>}/>
           <Route path="/usuarios" element={<Usuarios/>}/>
           <Route path="/adicionar" element={<AdicionarUsuario/>} />
           <Route path='*' element={<PageNotFound/>}/>

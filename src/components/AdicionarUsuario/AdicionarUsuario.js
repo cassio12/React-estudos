@@ -7,6 +7,8 @@ const AdicionarUsuario = (props) => {
 const [nome, setNome] = useState('')
 const [sobreNome, setSobreNome] = useState('')
 const [email, setEmail] = useState('')
+const [openStausMensage, setOenStausMensage] = useState(true)
+const [stausMensage, setStausMensage] = useState('')
 
   const onSubmitHandler = async event => { 
     event.preventDefault()
@@ -20,15 +22,18 @@ const [email, setEmail] = useState('')
     }
 
     await fetch('https://reqres.in/api/users', data)
-    .then( resp => resp.json())
-    .then( data => {
-      setNome('')
-      setEmail('')
-      setSobreNome('')
-      
-      props.adicionarUsuario(data)
+    .then( resp => {
+      if(resp.ok){
+        setNome('')
+        setEmail('')
+        setSobreNome('')
+        setOenStausMensage(true)
+        setTimeout(() => {
+          setOenStausMensage(false)
+        }, 3000)
+        setStausMensage('Usuario cadastrado com sucesso!')
+      }
     })
-
   }
 
     return (
@@ -73,6 +78,7 @@ const [email, setEmail] = useState('')
             Adicionar
         </button>
         </form>
+        {openStausMensage && <p className='mensage-stauts-title'>{stausMensage}</p>}
       </div>
     )
   }

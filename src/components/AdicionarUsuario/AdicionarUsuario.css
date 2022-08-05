@@ -72,3 +72,9 @@
 .AdicionarUsuario button:hover {
   background-color: #DA3C78;
 }
+
+.mensage-stauts-title {
+  color: #12FE68;
+  font-weight: bold;
+  text-align: center;
+}

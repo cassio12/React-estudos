@@ -3,8 +3,8 @@ import React from 'react'
 function Home(props) {
   return (
     <div >
-      <h1>Pagina Inicíal</h1>
-      <p>Olá</p>
+      <h1>Home Page</h1>
+      <p>Hello</p>
     </div>
   )
 }
